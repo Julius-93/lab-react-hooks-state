@@ -1,68 +1,110 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+* {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f4f4;
+  color: #222;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+button,
+select {
+  font: inherit;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.app {
+  min-height: 100vh;
+  padding: 40px;
+  background-color: #f4f4f4;
+  color: #222;
+  transition: all 0.3s ease;
+}
+
+.app h1 {
+  margin-top: 0;
+}
+
+.filter-section {
+  margin: 25px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filter-section select {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #aaa;
+}
+
+.product-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 15px 0;
+  max-width: 400px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.product-card h3 {
+  margin-top: 0;
+}
+
+.product-card button,
+.app > button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #333;
+  color: white;
+}
+
+.product-card button:hover,
+.app > button:hover {
+  opacity: 0.85;
+}
+
+.cart {
+  margin-top: 35px;
+  padding: 20px;
+  max-width: 500px;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.cart li {
+  margin: 10px 0;
+}
+
+/* Dark mode */
+
+.app.dark-mode {
+  background-color: #1e1e1e;
+  color: #f5f5f5;
+}
+
+.app.dark-mode .product-card,
+.app.dark-mode .cart {
+  background-color: #2b2b2b;
+  color: #f5f5f5;
+  border-color: #444;
+}
+
+.app.dark-mode .filter-section select {
+  background-color: #333;
+  color: white;
+  border-color: #555;
+}
+
+.app.dark-mode button {
+  background-color: #f5f5f5;
+  color: #222;
 }
